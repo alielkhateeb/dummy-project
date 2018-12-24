@@ -1,0 +1,19 @@
+{
+  "name": "dummy-project",
+  "version": "1.0.0",
+  "description": "Just a dummy-project to implement a single-page app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alielkhateeb/dummy-project.git"
+  },
+  "author": "Ali Elkhateeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alielkhateeb/dummy-project/issues"
+  },
+  "homepage": "https://github.com/alielkhateeb/dummy-project#readme"
+}
