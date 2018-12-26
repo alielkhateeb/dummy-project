@@ -1,0 +1,66 @@
+@import "../_variables";
+
+#user-registration-panel {
+    padding: 0 100px;
+
+    .form-title {
+        font-size: 24px;
+        color: @form-title-color;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .form-body {
+        .row {
+            display: flex;
+
+            .form-input {
+                flex: 55%;
+                margin: 5px 0;
+
+                // Left column (First element in row)
+                &:first-of-type {
+                    margin-right: 140px;
+                    flex: 45%;
+                }
+
+                .form-label {
+                    color: @form-label-color;
+                    font-size: 13px;
+                    font-weight: bold;
+                }
+
+                @import "form-input-text";
+
+                @import "form-input-radio";
+
+                @import "form-input-checkbox";
+
+                &.actions {
+                    text-align: right;
+                    align-self: center;
+
+                    button {
+                        border: none;
+                        padding: 10px 25px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 13px;
+                        font-weight: bold;
+                        background-color: @form-button-default-bg-color;
+                        color: @form-button-default-text-color;
+                        border-radius: 8px;
+                        outline: none;
+                        margin-left: 5px;
+
+                        &.success {
+                            background-color: @form-button-success-bg-color;
+                            color: @form-button-success-text-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

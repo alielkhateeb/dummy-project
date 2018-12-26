@@ -1,0 +1,72 @@
+@import "../_variables";
+
+#help-panel {
+    margin: 40px 100px;
+    height: auto;
+    border: 1px solid @help-panel-border-color;
+    border-radius: 5px;
+
+    .help-title {
+        background: @help-panel-title-bg-color;
+        border-bottom: 1px solid @help-panel-border-color;
+        padding: 10px 25px;
+        border-radius: 5px 5px 0 0;
+
+        .help-text {
+            display: inline-block;
+            color: @help-panel-title-text-color;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .help-close {
+            float: right;
+            color: @main-color;
+            font-size: 10px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+    }
+
+    .help-body {
+        position: relative;
+        padding: 10px 25px;
+
+        .help-icon {
+            display: inline-block;
+            height: 100px;
+            color: @help-panel-icon-color;
+            font-size: 100px;
+            left: 25px;
+            top: 15px;
+
+            i {
+                vertical-align: top;
+            }
+        }
+
+        .help-body-text {
+            color: @help-panel-text-color;
+            display: inline-block;
+            font-size: 13px;
+
+            > p {
+                word-break: break-all;
+
+                &:first-of-type {
+                    margin-top: 0;
+                }
+            }
+
+            &:before {
+                //noinspection CssNoGenericFontName
+                font-family: "Font Awesome 5 Free";
+                content: "\f1cd";
+                display: inline-block;
+                font-size: 100px;
+                float: left;
+                margin-right: 10px;
+            }
+        }
+    }
+}

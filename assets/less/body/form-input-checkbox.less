@@ -1,0 +1,68 @@
+@import "../_variables";
+
+.checkbox-input {
+    .checkbox-label {
+        display: block;
+        float: left;
+        position: relative;
+        padding-left: 38px;
+        cursor: pointer;
+        font-size: 13px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        line-height: 38px;
+        color: @form-input-checkbox-label-color;
+        font-weight: 600;
+        margin-right: 17px;
+
+        &:hover {
+            input[type=checkbox] ~ .check-mark {
+                border-color: @main-color;
+            }
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+
+            &:checked ~ .check-mark {
+                border-color: @main-color;
+
+                &:after {
+                    display: block;
+                }
+            }
+        }
+
+        .check-mark {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: @form-input-checkbox-square-bg;
+            border: 2px solid @form-input-border-color;
+            border-radius: 5px;
+
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid @form-input-checkbox-tick-color;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,364 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+html body {
+  margin: 0;
+}
+html body header {
+  background-color: white;
+  height: 40px;
+  line-height: 40px;
+  padding: 10px 100px;
+  border-bottom: 2px solid #949494;
+}
+html body header #header-title {
+  float: left;
+  font-size: 18px;
+  color: #2f2f2f;
+  font-weight: bold;
+}
+html body header #header-title .bars-icon {
+  margin-right: 5px;
+  color: #569f00;
+}
+html body header #header-user {
+  float: right;
+  font-size: 14px;
+  color: #545454;
+  font-weight: 600;
+}
+html body header #header-user .user-icon {
+  margin-right: 5px;
+  color: #569f00;
+}
+html body .breadcrumb {
+  padding: 10px 100px;
+  list-style: none;
+  margin: 0;
+}
+html body .breadcrumb li {
+  display: inline;
+  font-size: 13px;
+}
+
+/*noinspection CssNoGenericFontName*/
+html body .breadcrumb li + li:before {
+  padding: 8px;
+  font-weight: 900;
+  color: lightgrey;
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+}
+html body .breadcrumb li a {
+  color: #569f00;
+  font-weight: 600;
+  text-decoration: none;
+}
+html body .breadcrumb li a:hover {
+  text-decoration: underline;
+}
+html body section #top-panel {
+  padding: 0 100px;
+  background: #F0F0F0;
+  height: 100px;
+  line-height: 100px;
+  border-top: 1px solid gainsboro;
+}
+html body section #top-panel .item {
+  display: inline-flex;
+  flex-direction: row;
+  height: 100%;
+  padding: 0 25px;
+}
+html body section #top-panel .item .item-icon {
+  display: inline-block;
+  font-size: 34px;
+  color: #999999;
+}
+html body section #top-panel .item .item-data {
+  display: flex;
+  flex-direction: column;
+  line-height: 15px;
+  align-self: center;
+  margin-left: 10px;
+}
+html body section #top-panel .item .item-data .item-title {
+  color: #afafaf;
+  font-size: 12px;
+  font-weight: 600;
+}
+html body section #top-panel .item .item-data .item-body {
+  color: #2f2f2f;
+  font-size: 13px;
+  font-weight: bold;
+}
+html body section #top-panel .item.right-side {
+  float: right;
+}
+html body section #top-panel .item.right-side .item-icon {
+  color: #569f00;
+}
+html body section #top-panel .item.right-side .item-body {
+  color: #569f00;
+}
+html body section #help-panel {
+  margin: 40px 100px;
+  height: auto;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+}
+html body section #help-panel .help-title {
+  background: #F0F0F0;
+  border-bottom: 1px solid gainsboro;
+  padding: 10px 25px;
+  border-radius: 5px 5px 0 0;
+}
+html body section #help-panel .help-title .help-text {
+  display: inline-block;
+  color: #2f2f2f;
+  font-size: 13px;
+  font-weight: bold;
+}
+html body section #help-panel .help-title .help-close {
+  float: right;
+  color: #569f00;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 20px;
+}
+html body section #help-panel .help-body {
+  position: relative;
+  padding: 10px 25px;
+}
+html body section #help-panel .help-body .help-icon {
+  display: inline-block;
+  height: 100px;
+  color: #999999;
+  font-size: 100px;
+  left: 25px;
+  top: 15px;
+}
+html body section #help-panel .help-body .help-icon i {
+  vertical-align: top;
+}
+html body section #help-panel .help-body .help-body-text {
+  color: #828282;
+  display: inline-block;
+  font-size: 13px;
+}
+html body section #help-panel .help-body .help-body-text > p {
+  word-break: break-all;
+}
+html body section #help-panel .help-body .help-body-text > p:first-of-type {
+  margin-top: 0;
+}
+
+/*noinspection CssNoGenericFontName*/
+html body section #help-panel .help-body .help-body-text:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f1cd";
+  display: inline-block;
+  font-size: 100px;
+  float: left;
+  margin-right: 10px;
+}
+html body section #user-registration-panel {
+  padding: 0 100px;
+}
+html body section #user-registration-panel .form-title {
+  font-size: 24px;
+  color: #2f2f2f;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+html body section #user-registration-panel .form-body .row {
+  display: flex;
+}
+html body section #user-registration-panel .form-body .row .form-input {
+  flex: 55%;
+  margin: 5px 0;
+}
+html body section #user-registration-panel .form-body .row .form-input:first-of-type {
+  margin-right: 140px;
+  flex: 45%;
+}
+html body section #user-registration-panel .form-body .row .form-input .form-label {
+  color: #2f2f2f;
+  font-size: 13px;
+  font-weight: bold;
+}
+html body section #user-registration-panel .form-body .row .form-input .text-input .instructions {
+  visibility: hidden;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ccc;
+}
+html body section #user-registration-panel .form-body .row .form-input .text-input input[type=text],
+html body section #user-registration-panel .form-body .row .form-input .text-input input[type=email],
+html body section #user-registration-panel .form-body .row .form-input .text-input select {
+  width: 100%;
+  padding: 8px 10px;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 5px 0;
+}
+html body section #user-registration-panel .form-body .row .form-input .text-input input[type=text]:focus,
+html body section #user-registration-panel .form-body .row .form-input .text-input input[type=email]:focus,
+html body section #user-registration-panel .form-body .row .form-input .text-input select:focus {
+  outline: none;
+  border: 2px solid #569f00;
+}
+html body section #user-registration-panel .form-body .row .form-input .text-input input[type=text]:focus ~ .instructions,
+html body section #user-registration-panel .form-body .row .form-input .text-input input[type=email]:focus ~ .instructions,
+html body section #user-registration-panel .form-body .row .form-input .text-input select:focus ~ .instructions {
+  visibility: visible;
+}
+html body section #user-registration-panel .form-body .row .form-input .radio-input .radio-label {
+  display: block;
+  float: left;
+  position: relative;
+  padding-left: 38px;
+  cursor: pointer;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 38px;
+  color: #828282;
+  margin-right: 30px;
+  font-weight: 600;
+}
+html body section #user-registration-panel .form-body .row .form-input .radio-input .radio-label:hover input[type=radio] ~ .check-mark {
+  border-color: #569f00;
+}
+html body section #user-registration-panel .form-body .row .form-input .radio-input .radio-label input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+html body section #user-registration-panel .form-body .row .form-input .radio-input .radio-label input[type=radio]:checked ~ .check-mark {
+  border-color: #569f00;
+}
+html body section #user-registration-panel .form-body .row .form-input .radio-input .radio-label input[type=radio]:checked ~ .check-mark:after {
+  display: block;
+}
+html body section #user-registration-panel .form-body .row .form-input .radio-input .radio-label .check-mark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+html body section #user-registration-panel .form-body .row .form-input .radio-input .radio-label .check-mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 6px;
+  left: 6px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: black;
+}
+html body section #user-registration-panel .form-body .row .form-input .checkbox-input .checkbox-label {
+  display: block;
+  float: left;
+  position: relative;
+  padding-left: 38px;
+  cursor: pointer;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 38px;
+  color: #828282;
+  font-weight: 600;
+  margin-right: 17px;
+}
+html body section #user-registration-panel .form-body .row .form-input .checkbox-input .checkbox-label:hover input[type=checkbox] ~ .check-mark {
+  border-color: #569f00;
+}
+html body section #user-registration-panel .form-body .row .form-input .checkbox-input .checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+html body section #user-registration-panel .form-body .row .form-input .checkbox-input .checkbox-label input:checked ~ .check-mark {
+  border-color: #569f00;
+}
+html body section #user-registration-panel .form-body .row .form-input .checkbox-input .checkbox-label input:checked ~ .check-mark:after {
+  display: block;
+}
+html body section #user-registration-panel .form-body .row .form-input .checkbox-input .checkbox-label .check-mark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+html body section #user-registration-panel .form-body .row .form-input .checkbox-input .checkbox-label .check-mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+html body section #user-registration-panel .form-body .row .form-input.actions {
+  text-align: right;
+  align-self: center;
+}
+html body section #user-registration-panel .form-body .row .form-input.actions button {
+  border: none;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #F0F0F0;
+  color: #2f2f2f;
+  border-radius: 8px;
+  outline: none;
+  margin-left: 5px;
+}
+html body section #user-registration-panel .form-body .row .form-input.actions button.success {
+  background-color: #569f00;
+  color: white;
+}
+html body footer {
+  background-color: white;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 100px;
+  border-top: 1px solid #949494;
+  font-size: 12px;
+  font-weight: 400;
+}
+html body footer #footer-title {
+  float: left;
+  color: #B9B9B9;
+}
+html body footer #footer-version {
+  float: right;
+  font-size: 12px;
+  color: #B9B9B9;
+}

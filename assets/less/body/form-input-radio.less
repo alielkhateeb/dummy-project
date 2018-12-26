@@ -1,0 +1,63 @@
+@import "../_variables";
+
+.radio-input {
+    .radio-label {
+        display: block;
+        float: left;
+        position: relative;
+        padding-left: 38px;
+        cursor: pointer;
+        font-size: 13px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        line-height: 38px;
+        color: @form-input-radio-label-color;
+        margin-right: 30px;
+        font-weight: 600;
+
+        &:hover {
+            input[type=radio] ~ .check-mark {
+                border-color: @main-color;
+            }
+        }
+
+        input[type=radio] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+
+            &:checked ~ .check-mark {
+                border-color: @main-color;
+
+                &:after {
+                    display: block;
+                }
+            }
+        }
+
+        .check-mark {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: @form-input-radio-circle-bg-color;
+            border-radius: 50%;
+            border: 2px solid @form-input-border-color;
+
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                top: 6px;
+                left: 6px;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background: @form-input-radio-circle-selected;
+            }
+        }
+    }
+}

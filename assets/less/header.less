@@ -1,0 +1,33 @@
+@import "_variables";
+
+header {
+    background-color: @header-bg-color;
+    height: @header-height;
+    line-height: @header-height;
+    padding: 10px 100px;
+    border-bottom: 2px solid @header-border-bottom-color;
+
+    #header-title {
+        float: left;
+        font-size: 18px;
+        color: @header-title-text-color;
+        font-weight: bold;
+
+        .bars-icon {
+            margin-right: 5px;
+            color: @main-color;
+        }
+    }
+
+    #header-user {
+        float: right;
+        font-size: 14px;
+        color: @header-user-text-color;
+        font-weight: 600;
+
+        .user-icon {
+            margin-right: 5px;
+            color: @main-color;
+        }
+    }
+}

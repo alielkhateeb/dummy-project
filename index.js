@@ -5,14 +5,17 @@ require('dotenv').config();
 
 let http = require('http');
 let render = require('./views/render');
-let router = require('./router');
+let router = require('./routes/router');
 
 let index = http.createServer(function(req, res) {
     let handled = false;
     for (let handler of router.handlers) {
-        if(req.url === handler.pathName) {
+        // TODO: add handler.method checking
+        if(req.url.match(handler.pathName)) {
+            console.log(handler);
             handler.fn(req, res);
             handled = true;
+            break;
         }
     }
 
