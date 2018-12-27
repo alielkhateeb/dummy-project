@@ -1,0 +1,67 @@
+@import "../_variables";
+
+#bikers-panel {
+    margin: 30px 100px;
+
+    .panel-title {
+        font-size: 24px;
+        color: @panel-title-color;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .panel-body {
+        #bikers-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+
+            td, th {
+                padding: 12px;
+            }
+            thead {
+                tr {
+                    border-bottom: 1px solid @bikers-table-header-border-bottom-color;
+
+                    th {
+                        text-align: left;
+                        background: @bikers-table-header-bg-color;
+                        color: @bikers-table-header-text-color;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    cursor: pointer;
+
+                    &:nth-child(even) {
+                        background-color: @bikers-table-even-row-bg-color;
+                    }
+
+                    &:hover {
+                        background: @bikers-table-row-hover;
+                        td.actions {
+                            .delete-icon {
+                                visibility: visible;
+                            }
+                        }
+                    }
+
+                    td {
+                        &.actions {
+                            width: 20px;
+                            .delete-icon {
+                                visibility: hidden;
+
+                                &:hover {
+                                    color: @bikers-table-delete-icon-hover-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
