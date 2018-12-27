@@ -12,7 +12,6 @@ let index = http.createServer(function(req, res) {
     for (let handler of router.handlers) {
         // TODO: add handler.method checking
         if(req.url.match(handler.pathName)) {
-            console.log(handler);
             handler.fn(req, res);
             handled = true;
             break;

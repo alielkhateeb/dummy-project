@@ -44,7 +44,6 @@ html body .breadcrumb li + li:before {
   padding: 8px;
   font-weight: 900;
   color: lightgrey;
-  /*noinspection CssNoGenericFontName*/
   font-family: "Font Awesome 5 Free";
   content: "\f054";
 }
@@ -153,7 +152,6 @@ html body section #help-panel .help-body .help-body-text > p:first-of-type {
   margin-top: 0;
 }
 html body section #help-panel .help-body .help-body-text:before {
-  /*noinspection CssNoGenericFontName*/
   font-family: "Font Awesome 5 Free";
   content: "\f1cd";
   display: inline-block;

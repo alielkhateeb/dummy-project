@@ -1,0 +1,33 @@
+<div id="bikers-panel">
+	<div class="panel-title">
+		Bikers
+	</div>
+	<div class="panel-body">
+		<table id="bikers-table">
+			<thead>
+				<tr>
+					<th>Full name</th>
+					<th>E-mail</th>
+					<th>City</th>
+					<th>Ride in group</th>
+					<th>Days of the week</th>
+					<th>Registration day</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<%for(let biker of this.bikers) {%>
+				<tr>
+					<td><%biker.fullName%></td>
+					<td><%biker.email%></td>
+					<td><%biker.city%></td>
+					<td>No</td>
+					<td>No</td>
+					<td>No</td>
+					<td class="actions"><i class="delete-icon far fa-trash-alt"></i></td>
+				</tr>
+				<%}%>
+			</tbody>
+		</table>
+	</div>
+</div>
