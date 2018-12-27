@@ -1,3 +1,5 @@
+@import "../../_variables";
+
 &.actions {
     text-align: right;
     align-self: center;
@@ -14,10 +16,18 @@
         border-radius: 5px;
         outline: none;
         margin-left: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background: @form-button-default-hover-color
+        }
 
         &.success {
             background-color: @form-button-success-bg-color;
             color: @form-button-success-text-color;
+            &:hover {
+                background: @form-button-success-hover-color
+            }
         }
     }
 }
