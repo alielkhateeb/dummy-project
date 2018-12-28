@@ -2,9 +2,8 @@ const fs = require('fs');
 
 function render(fileName, data) {
     let response = fs.readFileSync(__dirname + `/${fileName}.html`, 'utf-8');
-    // TODO: use parameter data instead
     let expressionsMatcherRegex = /<%([^%>]+)?%>/g, match;
-    let jsFunctionsRegex = /(^( )?(if|for|else|{|}))(.*)?/g;
+    let jsFunctionsRegex = /(^( )?(if|for|else|switch|case|break{|}))(.*)?/g;
     let functionBodyString = 'let htmlStringArray=[];';
     let currentCursor = 0;
     let addCode = function (line, js) {
@@ -25,8 +24,9 @@ function render(fileName, data) {
                 functionBodyString += 'htmlStringArray.push(' + line + ');\n';
             }
         } else {
+            line = line.replace(/"/g, '\\"');
             if (line) {
-                functionBodyString += 'htmlStringArray.push("' + line.replace(/"/g, '\\"') + '");';
+                functionBodyString += 'htmlStringArray.push("' + line + '");';
             }
         }
     };
@@ -52,6 +52,7 @@ function render(fileName, data) {
     addCode(response.substr(currentCursor, response.length - currentCursor));
     functionBodyString += 'return htmlStringArray.join("");';
 
+    console.log(functionBodyString.replace(/[\r\t\n]/g, ''));
     /**
      * Replacing \r\t\n to be able to evaluate javascript injected strings without errors.
      */

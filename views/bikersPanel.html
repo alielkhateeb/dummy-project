@@ -21,9 +21,16 @@
 					<td><%biker.fullName%></td>
 					<td><%biker.email%></td>
 					<td><%biker.city%></td>
-					<td>No</td>
-					<td>No</td>
-					<td>No</td>
+					<td><%if (biker.rideInGroup === this.RIDE_IN_GROUP_ALWAYS) {%>
+							Always
+						<%}else if (biker.rideInGroup === this.RIDE_IN_GROUP_SOMETIMES) {%>
+							Sometimes
+						<%}else if (biker.rideInGroup === this.RIDE_IN_GROUP_NEVER) {%>
+							Never
+						<%}%>
+					</td>
+					<td><%biker.city%></td>
+					<td><%biker.city%></td>
 					<td class="actions"><i class="delete-icon far fa-trash-alt"></i></td>
 				</tr>
 				<%}%>

@@ -189,6 +189,16 @@ html body section #user-registration-panel .form-body .row .form-input .form-lab
   font-size: 13px;
   font-weight: bold;
 }
+html body section #user-registration-panel .form-body .row .form-input label[for=city] .city-label {
+  display: inline-block;
+}
+html body section #user-registration-panel .form-body .row .form-input label[for=city] .optional {
+  float: right;
+  position: relative;
+  top: 8px;
+  font-size: 11px;
+  color: #ddd;
+}
 html body section #user-registration-panel .form-body .row .form-input .text-input .instructions {
   visibility: hidden;
   font-size: 11px;
@@ -229,7 +239,7 @@ html body section #user-registration-panel .form-body .row .form-input .radio-in
   -ms-user-select: none;
   user-select: none;
   line-height: 38px;
-  color: #828282;
+  color: #5d5d5d;
   margin-right: 30px;
   font-weight: 600;
 }
@@ -280,7 +290,7 @@ html body section #user-registration-panel .form-body .row .form-input .checkbox
   -ms-user-select: none;
   user-select: none;
   line-height: 38px;
-  color: #828282;
+  color: #5d5d5d;
   font-weight: 600;
   margin-right: 17px;
 }

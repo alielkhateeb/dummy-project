@@ -1,16 +1,17 @@
+<!--suppress ALL -->
 <div id="user-registration-panel">
 	<div class="panel-title">
 		User Registration
 	</div>
 	<div class="form-body">
-		<form>
+		<form method="post" action="/biker">
 			<div class="row">
 				<div class="form-input full-name">
 					<label class="form-label" for="full-name">
 						Full name<br>
 					</label>
 					<div class="text-input">
-						<input id="full-name" type="text" name="fullName"/>
+						<input id="full-name" type="text" name="fullName" required/>
 						<div class="instructions">Some instructions lah</div>
 					</div>
 				</div>
@@ -20,15 +21,15 @@
 					</label>
 					<div class="radio-input">
 						<label class="radio-label">Always
-							<input type="radio" name="rideInGroup" value="always"/>
+							<input type="radio" name="rideInGroup" value="<%this.RIDE_IN_GROUP_ALWAYS%>" required/>
 							<span class="check-mark"></span>
 						</label>
 						<label class="radio-label">Sometimes
-							<input type="radio" name="rideInGroup" value="sometimes"/>
+							<input type="radio" name="rideInGroup" value="<%this.RIDE_IN_GROUP_SOMETIMES%>" required/>
 							<span class="check-mark"></span>
 						</label>
 						<label class="radio-label">Never
-							<input id="ride-in-group-never" type="radio" name="rideInGroup" value="never"/>
+							<input id="ride-in-group-never" type="radio" name="rideInGroup" value="<%this.RIDE_IN_GROUP_NEVER%>" required/>
 							<span class="check-mark"></span>
 						</label>
 					</div>
@@ -40,7 +41,7 @@
 						E-mail<br>
 					</label>
 					<div class="text-input">
-						<input id="e-mail" type="email" name="email"/>
+						<input id="e-mail" type="email" name="email" required/>
 						<div class="instructions">Some instructions lah</div>
 					</div>
 				</div>
@@ -50,31 +51,31 @@
 					</label>
 					<div class="checkbox-input">
 						<label class="checkbox-label">Sun
-							<input type="checkbox">
+							<input type="checkbox" name="daysOfWeek" value="0">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Mon
-							<input type="checkbox">
+							<input type="checkbox" name="daysOfWeek" value="1">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Tue
-							<input type="checkbox">
+							<input type="checkbox" name="daysOfWeek" value="2">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Wed
-							<input type="checkbox">
+							<input type="checkbox" name="daysOfWeek" value="3">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Thu
-							<input type="checkbox">
+							<input type="checkbox" name="daysOfWeek" value="4">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Fri
-							<input type="checkbox">
+							<input type="checkbox" name="daysOfWeek" value="5">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Sat
-							<input type="checkbox">
+							<input type="checkbox" name="daysOfWeek" value="6">
 							<span class="check-mark"></span>
 						</label>
 					</div>
@@ -83,10 +84,11 @@
 			<div class="row">
 				<div class="form-input city">
 					<label class="form-label" for="city">
-						City<br>
+						<div class="city-label">City</div>
+						<div class="optional">optional</div>
 					</label>
 					<div class="text-input">
-						<input id="city" type="text" name="fullName"/>
+						<input id="city" type="text" name="city"/>
 						<div class="instructions">Some instructions lah</div>
 					</div>
 				</div>
