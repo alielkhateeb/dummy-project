@@ -52,7 +52,6 @@ function render(fileName, data) {
     addCode(response.substr(currentCursor, response.length - currentCursor));
     functionBodyString += 'return htmlStringArray.join("");';
 
-    console.log(functionBodyString.replace(/[\r\t\n]/g, ''));
     /**
      * Replacing \r\t\n to be able to evaluate javascript injected strings without errors.
      */

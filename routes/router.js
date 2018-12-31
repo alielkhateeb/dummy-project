@@ -8,6 +8,9 @@ class Router {
     constructor () {
         this.handlers = [];
 
+        /**
+         * Defining get route for all CSS and JS requests.
+         */
         this.get('/*.css', Controller.serveCss);
         this.get('/*.js', Controller.serveJs);
 
@@ -60,6 +63,16 @@ class Router {
      */
     delete(pathName, fn) {
         this.route(pathName, fn, 'DELETE');
+    }
+
+    /**
+     * A new route with the PUT HTTP method
+     *
+     * @param {string} pathName
+     * @param {function} fn
+     */
+    put(pathName, fn) {
+        this.route(pathName, fn, 'PUT');
     }
 }
 

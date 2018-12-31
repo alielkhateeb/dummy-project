@@ -17,6 +17,12 @@
         margin-right: 30px;
         font-weight: 600;
 
+        input[type=radio]:focus {
+             ~ .check-mark {
+                border-color: @main-color;
+            }
+        }
+
         &:hover {
             input[type=radio] ~ .check-mark {
                 border-color: @main-color;

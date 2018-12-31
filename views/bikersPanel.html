@@ -3,7 +3,11 @@
 		Bikers
 	</div>
 	<div class="panel-body">
-		<table id="bikers-table">
+		<div id="no-bikers" class="<%if(this.bikers.length) {%>hide<%}%>">
+			<i class="icon fas fa-exclamation-triangle"></i>
+			<div class="description">Sorry, there are no bikers, please add one using the form above.</div>
+		</div>
+		<table id="bikers-table" class="<%if(!this.bikers.length) {%>hide<%}%>">
 			<thead>
 				<tr>
 					<th>Full name</th>
@@ -17,23 +21,41 @@
 			</thead>
 			<tbody>
 				<%for(let biker of this.bikers) {%>
-				<tr>
-					<td><%biker.fullName%></td>
-					<td><%biker.email%></td>
-					<td><%biker.city%></td>
-					<td><%if (biker.rideInGroup === this.RIDE_IN_GROUP_ALWAYS) {%>
-							Always
+				<tr class="biker" data-id="<%biker.id%>">
+					<td class="full-name"><%biker.fullName%></td>
+					<td class="email"><%biker.email%></td>
+					<td class="city"><%biker.city%></td>
+					<td class="ride-in-group"><%if (biker.rideInGroup === this.RIDE_IN_GROUP_ALWAYS) {%>
+						<%this.RIDE_IN_GROUP_TEXT[this.RIDE_IN_GROUP_ALWAYS]%>
 						<%}else if (biker.rideInGroup === this.RIDE_IN_GROUP_SOMETIMES) {%>
-							Sometimes
+						<%this.RIDE_IN_GROUP_TEXT[this.RIDE_IN_GROUP_SOMETIMES]%>
 						<%}else if (biker.rideInGroup === this.RIDE_IN_GROUP_NEVER) {%>
-							Never
+						<%this.RIDE_IN_GROUP_TEXT[this.RIDE_IN_GROUP_NEVER]%>
 						<%}%>
 					</td>
-					<td><%biker.city%></td>
-					<td><%biker.city%></td>
+					<td class="days-of-week"><%this.daysOfWeek[biker.id]%></td>
+					<td class="registration-date">
+						<%this.registrationDateTime[biker.id].date%>
+						<span class="time"><%this.registrationDateTime[biker.id].time%></span>
+					</td>
 					<td class="actions"><i class="delete-icon far fa-trash-alt"></i></td>
 				</tr>
 				<%}%>
+				<tr class="biker clone hide">
+					<td class="full-name"></td>
+					<td class="email"></td>
+					<td class="city"></td>
+					<td class="ride-in-group"></td>
+					<td class="days-of-week"></td>
+					<td class="registration-date">
+						<span class="time"></span>
+					</td>
+					<td class="actions">
+						<span class="delete-icon">
+							<i class="far fa-trash-alt"></i>
+						</span>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>

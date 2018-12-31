@@ -7,9 +7,28 @@ userRegistrationPanel.prototype = {
         let me = this;
         me.ele = ele;
 
-        me.bindAddNewBikerForm();
+        me.bindAddNewBikerFormSubmit();
+        me.bindCancelForm();
     },
-    bindAddNewBikerForm: function () {
+    getFormData: function () {
+        let me = this;
+
+        let formDataSerialized = me.addNewBikerForm.serializeArray();
+        let formData = {daysOfWeek: []};
+        for (let formKey of formDataSerialized) {
+            if (formKey.name === 'daysOfWeek') {
+                formData[formKey.name].push(formKey.value);
+            } else {
+                let value = formKey.value.trim();
+                if (value) {
+                    formData[formKey.name] = value;
+                }
+            }
+        }
+
+        return formData;
+    },
+    bindAddNewBikerFormSubmit: function () {
         let me = this;
         me.addNewBikerForm = me.ele.find('form');
 
@@ -17,18 +36,7 @@ userRegistrationPanel.prototype = {
             e.preventDefault();
 
             let url = me.addNewBikerForm.attr('action');
-            let formDataSerialized = me.addNewBikerForm.serializeArray();
-            let formData = {daysOfWeek: []};
-            for (let formKey of formDataSerialized) {
-                if (formKey.name === 'daysOfWeek') {
-                    formData[formKey.name].push(formKey.value);
-                } else {
-                    let value = formKey.value.trim();
-                    if (value) {
-                        formData[formKey.name] = value;
-                    }
-                }
-            }
+            let formData = me.getFormData();
 
             $.ajax({
                 type: "POST",
@@ -36,8 +44,10 @@ userRegistrationPanel.prototype = {
                 data: formData,
                 success: function (data) {
                     if (data.success) {
-                        me.appendNewBiker(data.biker);
-                        alertify.success('A new biker has been added');
+                        data.biker.rideInGroupText = data.rideInGroupText;
+                        parent.bikersPanel.appendNewBiker(data.biker);
+                        me.addNewBikerForm.get(0).reset();
+                        alertify.success('A new biker has been added successfully.');
                     } else {
                         alertify.error(data.message);
                     }
@@ -48,7 +58,13 @@ userRegistrationPanel.prototype = {
             });
         });
     },
-    appendNewBiker: function(biker) {
-        console.log(biker);
+    bindCancelForm: function () {
+        let me = this;
+        me.cancelFormButton = me.addNewBikerForm.find('button.cancel');
+
+        me.cancelFormButton.on('click', function (e) {
+            e.preventDefault();
+            me.addNewBikerForm.get(0).reset();
+        });
     }
 };

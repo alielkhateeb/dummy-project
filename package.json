@@ -18,6 +18,7 @@
   "homepage": "https://github.com/alielkhateeb/dummy-project#readme",
   "dependencies": {
     "dotenv": "^6.2.0",
+    "moment": "^2.23.0",
     "mongoose": "^5.4.1"
   },
   "devDependencies": {

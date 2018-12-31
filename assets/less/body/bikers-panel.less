@@ -11,6 +11,24 @@
     }
 
     .panel-body {
+        #no-bikers {
+            padding: 15px;
+            background: @bikers-no-bikers-bg-color;
+            border: 1px solid @bikers-no-bikers-border-color;
+            border-radius: 10px;
+
+            .icon {
+                color: @bikers-no-bikers-icon-color;
+                margin-right: 10px;
+                font-size: 18px;
+            }
+
+            .description {
+                display: inline-block;
+                font-size: 13px;
+            }
+        }
+
         #bikers-table {
             width: 100%;
             border-collapse: collapse;
@@ -49,6 +67,15 @@
                     }
 
                     td {
+                        &.registration-date {
+                            .time {
+                                position: relative;
+                                bottom: 1px;
+                                margin-left: 2px;
+                                color: @bikers-table-time-color;
+                                font-size: 11px;
+                            }
+                        }
                         &.actions {
                             width: 20px;
                             .delete-icon {

@@ -1,7 +1,10 @@
 module.exports = function () {
     const mongoose = require('mongoose');
     // noinspection JSIgnoredPromiseFromCall
-    mongoose.connect('mongodb://127.0.0.1/dummyApp', {useNewUrlParser: true});
+    mongoose.connect('mongodb://127.0.0.1/dummyApp', {
+        useNewUrlParser: true,
+        useFindAndModify: false
+    });
 
     console.log('initializing DB');
 

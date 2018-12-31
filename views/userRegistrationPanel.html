@@ -11,7 +11,7 @@
 						Full name<br>
 					</label>
 					<div class="text-input">
-						<input id="full-name" type="text" name="fullName" required/>
+						<input id="full-name" tabindex="1" type="text" name="fullName" required/>
 						<div class="instructions">Some instructions lah</div>
 					</div>
 				</div>
@@ -20,16 +20,16 @@
 						Ride in group?<br>
 					</label>
 					<div class="radio-input">
-						<label class="radio-label">Always
-							<input type="radio" name="rideInGroup" value="<%this.RIDE_IN_GROUP_ALWAYS%>" required/>
+						<label class="radio-label"><%this.RIDE_IN_GROUP_TEXT[this.RIDE_IN_GROUP_ALWAYS]%>
+							<input type="radio" tabindex="4" name="rideInGroup" value="<%this.RIDE_IN_GROUP_ALWAYS%>" required/>
 							<span class="check-mark"></span>
 						</label>
-						<label class="radio-label">Sometimes
-							<input type="radio" name="rideInGroup" value="<%this.RIDE_IN_GROUP_SOMETIMES%>" required/>
+						<label class="radio-label"><%this.RIDE_IN_GROUP_TEXT[this.RIDE_IN_GROUP_SOMETIMES]%>
+							<input type="radio" tabindex="5" name="rideInGroup" value="<%this.RIDE_IN_GROUP_SOMETIMES%>" required/>
 							<span class="check-mark"></span>
 						</label>
-						<label class="radio-label">Never
-							<input id="ride-in-group-never" type="radio" name="rideInGroup" value="<%this.RIDE_IN_GROUP_NEVER%>" required/>
+						<label class="radio-label"><%this.RIDE_IN_GROUP_TEXT[this.RIDE_IN_GROUP_NEVER]%>
+							<input id="ride-in-group-never" tabindex="6" type="radio" name="rideInGroup" value="<%this.RIDE_IN_GROUP_NEVER%>" required/>
 							<span class="check-mark"></span>
 						</label>
 					</div>
@@ -41,7 +41,7 @@
 						E-mail<br>
 					</label>
 					<div class="text-input">
-						<input id="e-mail" type="email" name="email" required/>
+						<input id="e-mail" tabindex="2" type="email" name="email" required/>
 						<div class="instructions">Some instructions lah</div>
 					</div>
 				</div>
@@ -51,31 +51,31 @@
 					</label>
 					<div class="checkbox-input">
 						<label class="checkbox-label">Sun
-							<input type="checkbox" name="daysOfWeek" value="0">
+							<input type="checkbox" tabindex="7" name="daysOfWeek" value="0">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Mon
-							<input type="checkbox" name="daysOfWeek" value="1">
+							<input type="checkbox" tabindex="8" name="daysOfWeek" value="1">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Tue
-							<input type="checkbox" name="daysOfWeek" value="2">
+							<input type="checkbox" tabindex="9" name="daysOfWeek" value="2">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Wed
-							<input type="checkbox" name="daysOfWeek" value="3">
+							<input type="checkbox" tabindex="10" name="daysOfWeek" value="3">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Thu
-							<input type="checkbox" name="daysOfWeek" value="4">
+							<input type="checkbox" tabindex="11" name="daysOfWeek" value="4">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Fri
-							<input type="checkbox" name="daysOfWeek" value="5">
+							<input type="checkbox" tabindex="12" name="daysOfWeek" value="5">
 							<span class="check-mark"></span>
 						</label>
 						<label class="checkbox-label">Sat
-							<input type="checkbox" name="daysOfWeek" value="6">
+							<input type="checkbox" tabindex="13" name="daysOfWeek" value="6">
 							<span class="check-mark"></span>
 						</label>
 					</div>
@@ -88,13 +88,13 @@
 						<div class="optional">optional</div>
 					</label>
 					<div class="text-input">
-						<input id="city" type="text" name="city"/>
+						<input id="city" tabindex="3" type="text" name="city"/>
 						<div class="instructions">Some instructions lah</div>
 					</div>
 				</div>
 				<div class="form-input actions">
-					<button>Cancel</button>
-					<button class="success">Save</button>
+					<button class="cancel" tabindex="15">Cancel</button>
+					<button class="success" tabindex="14">Save</button>
 				</div>
 			</div>
 		</form>

@@ -2,6 +2,7 @@
  * Load environment variables from .env file to process.env
  */
 require('dotenv').config();
+const URL = require('url');
 
 require('./db')();
 
@@ -11,11 +12,13 @@ let router = require('./routes/router');
 
 let index = http.createServer(function(req, res) {
     let methodNotAllowed = false;
+    let { pathname } = URL.parse(req.url, true);
     for (let handler of router.handlers) {
         /**
          * check request url OR if the pathname has * then match it as regex (for CSS and JS)
          */
-        if(handler.pathName === req.url || (handler.pathName.indexOf('*') !== -1 && req.url.match(handler.pathName))) {
+        // console.log('comparing ' + myURL.pathname + ' with ' + handler.pathName);
+        if(handler.pathName === pathname || (handler.pathName.indexOf('*') !== -1 && pathname.match(handler.pathName))) {
             if (handler.method && handler.method !== req.method) {
                 methodNotAllowed = true;
                 continue;

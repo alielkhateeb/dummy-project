@@ -17,6 +17,12 @@
         font-weight: 600;
         margin-right: 17px;
 
+        input[type=checkbox]:focus {
+            ~ .check-mark {
+                border-color: @main-color;
+            }
+        }
+
         &:hover {
             input[type=checkbox] ~ .check-mark {
                 border-color: @main-color;

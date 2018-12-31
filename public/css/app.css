@@ -243,6 +243,9 @@ html body section #user-registration-panel .form-body .row .form-input .radio-in
   margin-right: 30px;
   font-weight: 600;
 }
+html body section #user-registration-panel .form-body .row .form-input .radio-input .radio-label input[type=radio]:focus ~ .check-mark {
+  border-color: #569f00;
+}
 html body section #user-registration-panel .form-body .row .form-input .radio-input .radio-label:hover input[type=radio] ~ .check-mark {
   border-color: #569f00;
 }
@@ -293,6 +296,9 @@ html body section #user-registration-panel .form-body .row .form-input .checkbox
   color: #5d5d5d;
   font-weight: 600;
   margin-right: 17px;
+}
+html body section #user-registration-panel .form-body .row .form-input .checkbox-input .checkbox-label input[type=checkbox]:focus ~ .check-mark {
+  border-color: #569f00;
 }
 html body section #user-registration-panel .form-body .row .form-input .checkbox-input .checkbox-label:hover input[type=checkbox] ~ .check-mark {
   border-color: #569f00;
@@ -371,6 +377,21 @@ html body section #bikers-panel .panel-title {
   font-weight: bold;
   margin-bottom: 10px;
 }
+html body section #bikers-panel .panel-body #no-bikers {
+  padding: 15px;
+  background: #f0f0f0;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+}
+html body section #bikers-panel .panel-body #no-bikers .icon {
+  color: darkgrey;
+  margin-right: 10px;
+  font-size: 18px;
+}
+html body section #bikers-panel .panel-body #no-bikers .description {
+  display: inline-block;
+  font-size: 13px;
+}
 html body section #bikers-panel .panel-body #bikers-table {
   width: 100%;
   border-collapse: collapse;
@@ -399,6 +420,13 @@ html body section #bikers-panel .panel-body #bikers-table tbody tr:hover {
 }
 html body section #bikers-panel .panel-body #bikers-table tbody tr:hover td.actions .delete-icon {
   visibility: visible;
+}
+html body section #bikers-panel .panel-body #bikers-table tbody tr td.registration-date .time {
+  position: relative;
+  bottom: 1px;
+  margin-left: 2px;
+  color: grey;
+  font-size: 11px;
 }
 html body section #bikers-panel .panel-body #bikers-table tbody tr td.actions {
   width: 20px;
