@@ -26,4 +26,4 @@ The base controller implemented in [Controller.js](/controllers/Controller.js), 
 We have only one model [Biker.js](/models/Biker.js), this is a mongoose schema model that has all the CRUD functionalities of Bikers table in the database dummyApp.
 
 ### Views
-The views are all HTML with a self-built renderer to allow javascript instructions to be written in the middle of the HTML.
+The [views](/views) are all HTML with a self-built renderer to allow javascript instructions to be written in the middle of the HTML.
