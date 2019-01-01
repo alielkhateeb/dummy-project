@@ -1,8 +1,12 @@
 # dummy-project
 
 ## Getting started
+Prerequisities:
+- Install `npm` ([How To Install](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm))
+- Install MongoDB ([How To Install](https://docs.mongodb.com/v3.2/administration/install-community/))
+
 To start the app:
-- Run the batch script [setup](/setup.bat).
+- Run the batch script [setup](/setup.bat) located in the root of this repo.
 - Open browser and navigate to http://localhost:3001
 
 Hint: To change the port, go to [.env](.env) file and change the variable `PORT`
