@@ -8,7 +8,12 @@ class HomeController extends Controller {
             let response;
             try {
                 let biker = await Biker.createNew(data);
-                response = {success: 1, biker: biker, rideInGroupText: Biker.RIDE_IN_GROUP_TEXT[biker.rideInGroup]};
+                response = {
+                    success: 1,
+                    biker: biker,
+                    rideInGroupText: Biker.RIDE_IN_GROUP_TEXT[biker.rideInGroup],
+                    daysOfWeekText: biker.getDaysOfWeekText()
+                };
             } catch (err) {
                 response = {success: 0, message: err.message};
             }

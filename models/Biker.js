@@ -16,23 +16,29 @@ const BikerSchema = new Schema({
     createdAt: {type: Date, default: Date.now},
 });
 
+BikerSchema.methods = {
+    getDaysOfWeekText: function () {
+        if (this.daysOfWeek && this.daysOfWeek.length) {
+            let daysOfWeekTextArray = [];
+            for (let day of this.daysOfWeek) {
+                let dayText = moment().day(day).format('ddd');
+                daysOfWeekTextArray.push(dayText);
+            }
+            return daysOfWeekTextArray.join(', ');
+        } else {
+            return 'None';
+        }
+    }
+};
+
 BikerSchema.statics = {
     getAllBikers: async function () {
         return await this.find({deleted: false}).sort({createdAt: -1}).exec();
     },
-    getDaysOfWeekString: function (bikers) {
+    getDaysOfWeekText: function (bikers) {
         let daysOfWeek = [];
         for(let biker of bikers) {
-            if (biker.daysOfWeek && biker.daysOfWeek.length) {
-                let daysOfWeekTextArray = [];
-                for (let day of biker.daysOfWeek) {
-                    let dayText = moment().day(day).format('ddd');
-                    daysOfWeekTextArray.push(dayText);
-                }
-                daysOfWeek[biker.id] = daysOfWeekTextArray.join(', ');
-            } else {
-                daysOfWeek[biker.id] = 'None';
-            }
+            daysOfWeek[biker.id] = biker.getDaysOfWeekText();
         }
 
         return daysOfWeek;

@@ -45,6 +45,7 @@ userRegistrationPanel.prototype = {
                 success: function (data) {
                     if (data.success) {
                         data.biker.rideInGroupText = data.rideInGroupText;
+                        data.biker.daysOfWeekText = data.daysOfWeekText;
                         parent.bikersPanel.appendNewBiker(data.biker);
                         me.addNewBikerForm.get(0).reset();
                         alertify.success('A new biker has been added successfully.');

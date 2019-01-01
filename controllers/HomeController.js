@@ -9,7 +9,7 @@ class HomeController extends Controller {
             let bikers = await Biker.getAllBikers();
 
             let registrationDateTime = Biker.getRegistrationDateTime(bikers);
-            let daysOfWeek = Biker.getDaysOfWeekString(bikers);
+            let daysOfWeek = Biker.getDaysOfWeekText(bikers);
 
             res.end(render('home', {
                 bikers: bikers,

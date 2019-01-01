@@ -1,5 +1,6 @@
 let parent;
 $(document).ready(function () {
+    alertify.set('notifier','position', 'top-right');
     parent = new app($('body'));
 });
 
