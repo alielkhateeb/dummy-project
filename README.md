@@ -1,8 +1,11 @@
 # dummy-project
 
 ## Getting started
-To start the app, run the 
+To start the app:
+- Run the batch script [setup](/setup.bat).
+- Open browser and navigate to http://localhost:3001
 
+Hint: To change the port, go to [.env](.env) file and change the variable `PORT`
 ## Framework
 I have built my own framework, the framework is following MVC pattern.
 
