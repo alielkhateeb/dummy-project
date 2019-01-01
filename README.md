@@ -5,7 +5,7 @@ Prerequisities:
 - Install `npm` ([How To Install](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm))
 - Install MongoDB ([How To Install](https://docs.mongodb.com/v3.2/administration/install-community/))
 
-To start the app:
+To migrate the database data and start the app server:
 - Run the batch script [setup](/setup.bat) located in the root of this repo.
 - Open browser and navigate to http://localhost:3001
 
