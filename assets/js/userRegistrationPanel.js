@@ -10,6 +10,11 @@ userRegistrationPanel.prototype = {
         me.bindAddNewBikerFormSubmit();
         me.bindCancelForm();
     },
+    /**
+     * Extract the form data inserted
+     *
+     * @returns object
+     */
     getFormData: function () {
         let me = this;
 
@@ -28,6 +33,9 @@ userRegistrationPanel.prototype = {
 
         return formData;
     },
+    /**
+     * Bind the form Save button (submit).
+     */
     bindAddNewBikerFormSubmit: function () {
         let me = this;
         me.addNewBikerForm = me.ele.find('form');
@@ -59,6 +67,9 @@ userRegistrationPanel.prototype = {
             });
         });
     },
+    /**
+     * Bind the form Cancel button.
+     */
     bindCancelForm: function () {
         let me = this;
         me.cancelFormButton = me.addNewBikerForm.find('button.cancel');

@@ -17,7 +17,7 @@ class Router {
         /**
          * Define application routes
          */
-        require('./routes')(this);
+        require('./Routes')(this);
     }
 
     /**

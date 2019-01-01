@@ -3,6 +3,11 @@ let helpPanel = function (ele) {
 };
 
 helpPanel.prototype = {
+    /**
+     * Initialize the Helper panel with the open/close accordion
+     *
+     * @param ele
+     */
     init: function (ele) {
         let me = this;
         me.ele = ele;

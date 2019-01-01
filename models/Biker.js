@@ -17,24 +17,90 @@ const BikerSchema = new Schema({
 });
 
 BikerSchema.methods = {
+    /**
+     * Get the text output of all days of week selected
+     *
+     * @returns {string}
+     */
     getDaysOfWeekText: function () {
         if (this.daysOfWeek && this.daysOfWeek.length) {
+            if (this.daysOfWeek.length === 7) {
+                return 'Every day'
+            }
+
+            if (this.isWeekdays()) {
+                return 'Week days';
+            }
+
+            if (this.isWeekends()) {
+                return 'Weekends';
+            }
+
             let daysOfWeekTextArray = [];
             for (let day of this.daysOfWeek) {
                 let dayText = moment().day(day).format('ddd');
                 daysOfWeekTextArray.push(dayText);
             }
+
             return daysOfWeekTextArray.join(', ');
         } else {
             return 'None';
         }
+    },
+    /**
+     * Check if the days selected are weekdays
+     *
+     * @returns {boolean}
+     */
+    isWeekdays: function () {
+        if (this.daysOfWeek.length !== 5) {
+            return false;
+        }
+
+        for (let day of this.daysOfWeek) {
+            if (day === "0" || day === "6") {
+                return false;
+            }
+        }
+
+        return true;
+    },
+    /**
+     * Check if the days selected are weekends
+     *
+     * @returns {boolean}
+     */
+    isWeekends: function () {
+        if (this.daysOfWeek.length !== 2) {
+            return false;
+        }
+
+        for (let day of this.daysOfWeek) {
+            if (day !== "0" && day !== "6") {
+                console.log('returning');
+                return false;
+            }
+        }
+
+        return true;
     }
 };
 
 BikerSchema.statics = {
+    /**
+     * Get all (non-deleted) bikers
+     *
+     * @returns {Promise<[Biker]>}
+     */
     getAllBikers: async function () {
         return await this.find({deleted: false}).sort({createdAt: -1}).exec();
     },
+    /**
+     * Get the text output of all days of week selected for a set of bikers
+     *
+     * @param bikers
+     * @returns {Array}
+     */
     getDaysOfWeekText: function (bikers) {
         let daysOfWeek = [];
         for(let biker of bikers) {
@@ -43,6 +109,12 @@ BikerSchema.statics = {
 
         return daysOfWeek;
     },
+    /**
+     * Get registration date and time formatted for a set of bikers.
+     *
+     * @param bikers
+     * @returns {Array}
+     */
     getRegistrationDateTime: function (bikers) {
         let registrationDateTime = [];
         for(let biker of bikers) {
@@ -54,6 +126,12 @@ BikerSchema.statics = {
 
         return registrationDateTime;
     },
+    /**
+     * Create a new biker
+     *
+     * @param data
+     * @returns {Promise<void>}
+     */
     createNew: async function (data) {
         let newBiker = {
             fullName: data.fullName,
@@ -73,6 +151,12 @@ BikerSchema.statics = {
             throw new Error(err.message);
         }
     },
+    /**
+     * Delete a biker
+     *
+     * @param id
+     * @returns {Promise<boolean>}
+     */
     deleteBiker: async function (id) {
         try {
             await this.findOneAndUpdate({_id: id}, { $set: {deleted: true }}).exec();
@@ -81,6 +165,12 @@ BikerSchema.statics = {
             throw new Error(err.message);
         }
     },
+    /**
+     * Undo delete a biker.
+     *
+     * @param id
+     * @returns {Promise<void>}
+     */
     undoDeleteBiker: async function (id) {
         let biker = await this.find({id: id}).exec();
 

@@ -11,5 +11,9 @@ module.exports = function (appRouter) {
     appRouter.route('/home', HomeController.init);
     appRouter.post('/biker', BikerController.addNew);
     appRouter.delete('/biker', BikerController.deleteBiker);
+    /**
+     * Undo delete biker
+     * TODO: implement it in the ui
+     */
     appRouter.put('/biker', BikerController.undoDeleteBiker);
 };

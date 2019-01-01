@@ -8,7 +8,7 @@ require('./db')();
 
 let http = require('http');
 let render = require('./views/render');
-let router = require('./routes/router');
+let router = require('./routes/Router');
 
 let index = http.createServer(function(req, res) {
     let methodNotAllowed = false;

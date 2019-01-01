@@ -15,6 +15,11 @@ bikersPanel.prototype = {
 
         me.bindDeleteBikerButton();
     },
+    /**
+     * Append the newly added biker to the DOM
+     *
+     * @param biker
+     */
     appendNewBiker: function(biker) {
         let me = this;
 
@@ -35,6 +40,9 @@ bikersPanel.prototype = {
         newBikerRow.removeClass('hide clone');
         me.bikersTableBody.prepend(newBikerRow);
     },
+    /**
+     * Bind the delete biker button
+     */
     bindDeleteBikerButton: function () {
         let me = this;
 
