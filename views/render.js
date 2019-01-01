@@ -1,5 +1,12 @@
 const fs = require('fs');
 
+/**
+ * Render a file with data
+ *
+ * @param fileName
+ * @param {object} data
+ * @returns {Buffer}
+ */
 function render(fileName, data) {
     let response = fs.readFileSync(__dirname + `/${fileName}.html`, 'utf-8');
     let expressionsMatcherRegex = /<%([^%>]+)?%>/g, match;

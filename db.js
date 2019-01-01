@@ -6,7 +6,7 @@ module.exports = function () {
         useFindAndModify: false
     });
 
-    console.log('initializing DB');
+    console.log('initializing DB Connection');
 
     const db = mongoose.connection;
     db.once('open', function () {
